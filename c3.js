@@ -1077,7 +1077,6 @@
             subchart_show: false,
             subchart_size_height: 60,
             subchart_onbrush: function () {},
-            subchart_axis_x_show: true,
             // color
             color_pattern: [],
             color_threshold: {},
@@ -5265,8 +5264,7 @@
         $$.axes.subx = context.append("g")
             .attr("class", CLASS.axisX)
             .attr("transform", $$.getTranslate('subx'))
-            .attr("clip-path", config.axis_rotated ? "" : $$.clipPathForXAxis)
-            .style("visibility", config.subchart_axis_x_show ? 'visible' : 'hidden');
+            .attr("clip-path", config.axis_rotated ? "" : $$.clipPathForXAxis);
     };
     c3_chart_internal_fn.updateTargetsForSubchart = function (targets) {
         var $$ = this, context = $$.context, config = $$.config,
